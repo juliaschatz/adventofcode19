@@ -15,28 +15,6 @@ def lcm(a, b):
     """Compute the lowest common multiple of a and b"""
     return a * b / gcd(a, b)
 
-def sim_axis(p0, v0):
-    p = p0[:]
-    v = v0[:]
-    states = set()
-    while True:
-        states.update((hash(tuple(p + v)), ))
-
-        # Acceleration
-        for j in range(len(p)):
-            for k in range(j):
-                vel = sign(p[i] - p[k])
-                v[j] += vel
-                v[k] -= vel
-        
-        # Position
-        for j in range(len(p)):
-            p[j] += v[j]
-        
-        if hash(tuple(p + v)) in states:
-            break
-    return len(states)
-
 with open("day12_input") as f:
     moons = []
     vels = []
