@@ -221,6 +221,6 @@ if __name__ == '__main__':
                     print()
                 did_thing = False
                 print()
-                time.sleep(0.005)
+                time.sleep(0.01)
             
         
